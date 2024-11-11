@@ -17,12 +17,18 @@ html{
 .mainDiv{}
 
 /* The console emulator */
-.device{}
+.device{
+    border:1px solid green;
+}
 
 /* Screen area */
 .deviceScreenWrapper{}
 
-.deviceScreen{}
+.deviceScreen{
+    background-color: black;
+    width: 30rem;
+    aspect-ratio: 3 / 2;
+}
 
 /* Input area */
 .deviceInputWrapper{}
