@@ -12,8 +12,16 @@
     --normal-button-width: 5rem;
     --normal-button-height: 2rem;
 
+    --normal-button-border-width:5px;
+    --normal-pressed-button-border-width:2px;
+    --normal-border-difference:3px;
+
     --vert-nav-button-height: 2rem;
     --vert-nav-button-width: 0.8rem;
+
+    --nav-button-border-width: 3px;
+    --nav-pressed-button-border-width:1px;
+    --nav-border-difference:2px;
 }
 
 html{
@@ -85,8 +93,8 @@ html{
     border-right: 2px solid grey;
     border-bottom: 2px solid grey;
     transform: translate(3px, 3px);
-    width:calc(5rem - 3px);
-    height:calc(2rem - 3px);
+    width:calc(var(--normal-button-width) - 3px);
+    height:calc(var(--normal-button-height) - 3px);
 }
 
 .navigationButtons{
@@ -95,46 +103,52 @@ html{
     grid-template-rows: 1fr 1fr 1fr;
 }
 
-.navigationButtons #up{
-    width:0.8rem;
-    height:2rem;
-    border-top:none;
-    border-right: 3px solid grey;
-    border-bottom: 3px solid grey;
-    border-left:none;
-}
-
-.navigationButtons #right{
-    width:2rem;
-    height:0.8rem;
-    border-top:none;
-    border-right: 3px solid grey;
-    border-bottom: 3px solid grey;
-    border-left:none;
-}
-
-.navigationButtons #down{
-    width:0.8rem;
-    height:2rem;
-    border-top:none;
-    border-right: 3px solid grey;
-    border-bottom: 3px solid grey;
-    border-left:none;
-}
-
-.navigationButtons #left{
-    width:2rem;
-    height:0.8rem;
-    border-top:none;
-    border-right: 3px solid grey;
-    border-bottom: 3px solid grey;
-    border-left:none;
+.navigationButtons button{
+    border-right: var(--nav-button-border-width) solid grey;
+    border-bottom: var(--nav-button-border-width) solid grey;
 }
 
 .navigationButtons button:hover{
-    border-right: 2px solid grey;
-    border-bottom: 2px solid grey;
-    transform: translate(3px, 3px);
-    width:calc(width - 3px);
-    height:calc(width - 3px);   
+    border-right: var(--nav-pressed-button-border-width) solid grey;
+    border-bottom: var(--nav-pressed-button-border-width) solid grey;
+    transform: translate(2px, 2px);
+}
+
+#up{
+    width:var(--vert-nav-button-width);
+    height:var(--vert-nav-button-height);
+    border-top:none;
+    border-left:none;
+    
+}
+
+#right{
+    width:var(--vert-nav-button-height);
+    height:var(--vert-nav-button-width);
+    border-top:none;
+    border-left:none;
+}
+
+#down{
+    width:var(--vert-nav-button-width);
+    height:var(--vert-nav-button-height);
+    border-top:none;
+    border-left:none;
+}
+
+#left{
+    width:var(--vert-nav-button-height);
+    height:var(--vert-nav-button-width);
+    border-top:none;
+    border-left:none;
+}
+
+#up:hover, #down:hover{
+    width:calc(var(--vert-nav-button-width) - var(--nav-border-difference));
+    height:calc(var(--vert-nav-button-height) - var(--nav-border-difference));
+}
+
+#right:hover, #left:hover{
+    width:calc(var(--vert-nav-button-height) - var(--nav-border-difference));
+    height:calc(var(--vert-nav-button-width) - var(--nav-border-difference));
 }
