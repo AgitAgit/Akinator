@@ -13,3 +13,23 @@
 html{
     background-color:#393E46;
 }
+
+.mainDiv{}
+
+/* The console emulator */
+.device{}
+
+/* Screen area */
+.deviceScreenWrapper{}
+
+.deviceScreen{}
+
+/* Input area */
+.deviceInputWrapper{}
+
+.buttonsDiv{}
+
+/* Answer buttons area */
+.buttonsCluster{}
+
+.buttonsCluster button{}
