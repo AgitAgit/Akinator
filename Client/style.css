@@ -67,15 +67,43 @@ html{
 }
 
 .buttonsDiv{
-    width:10rem;
-    height:4rem;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.powerWrapper{
+    box-sizing: content-box;
+    margin:0.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:2rem;
+    height:2rem;
+    border:1px solid gray;
+    border-right:5px solid gray;
+    border-bottom:5px solid gray;
+    border-radius: 50%;
+}
+
+.powerWrapper:hover{
+    /* what if I define the box sizing differently? Could it help avoid changing the size of the button? */
+    border-right:2px solid gray;
+    border-bottom:2px solid gray;
+    translate: 3px 3px;
+}
+
+#power{
+    /* margin:5px; */
+    width:1rem;
+    height:1rem;
+    border-radius:50%;
 }
 
 /* Answer buttons area */
 .buttonsCluster{
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, 5rem);
+    grid-template-rows: repeat(2, 2rem);
     gap:3px;
 }
 
@@ -99,8 +127,10 @@ html{
 
 .navigationButtons{
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr calc(var(--vert-nav-button-width) + 10px) 1fr;
+    grid-template-rows: 1fr calc(var(--vert-nav-button-width) + 10px) 1fr;
+    justify-items:center;
+    align-items: center;
 }
 
 .navigationButtons button{
@@ -119,7 +149,7 @@ html{
     height:var(--vert-nav-button-height);
     border-top:none;
     border-left:none;
-    
+    grid-column-start:2;
 }
 
 #right{
@@ -127,6 +157,9 @@ html{
     height:var(--vert-nav-button-width);
     border-top:none;
     border-left:none;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    justify-self: start;
 }
 
 #down{
@@ -134,6 +167,8 @@ html{
     height:var(--vert-nav-button-height);
     border-top:none;
     border-left:none;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
 }
 
 #left{
@@ -141,6 +176,9 @@ html{
     height:var(--vert-nav-button-width);
     border-top:none;
     border-left:none;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-self: end;
 }
 
 #up:hover, #down:hover{
