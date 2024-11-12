@@ -22,7 +22,10 @@ const chatgptTalk = async (req, res) => {
 
   if (userInput === "clear") {
     messagesFlow = [];
-    console.log(`Cleared conversation: ${messagesFlow}`);
+    res.status(200).json({
+      message: "Chat has been cleared",
+    });
+    return;
   }
 
   try {
@@ -49,7 +52,7 @@ const chatgptTalk = async (req, res) => {
 let messagesFlow = [
   {
     role: "user",
-    content: `I'm thinking of a specific character (or object, animal, profession), can you guess who (or what) it is?`,
+    content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses.`,
   },
 ];
 

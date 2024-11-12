@@ -1,6 +1,5 @@
 const express = require("express");
 const {
-  getAllUsers,
   partialUpdateUser,
   updateUserFullData,
   createNewUser,
@@ -9,8 +8,6 @@ const {
 } = require("../controllers/users-controller.js");
 
 const usersRoute = express.Router();
-
-usersRoute.get("/users", getAllUsers);
 
 usersRoute.post("/users", createNewUser);
 
