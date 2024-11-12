@@ -165,7 +165,6 @@ Updates an existing user's data completely.
 
 ```json
 {
-  "token": "<your_jwt_token>",
   "fName": "Jane",
   "user": "jane_doe_updated",
   "password": "newSecurePassword456",
@@ -284,15 +283,7 @@ Sends a prompt to ChatGPT and receives a response.
     "response": "Is it a football player?..."
   }
   ```
-
-**Notes**
-
-- Include the JWT token in the request body with the key `"token"`.
-- The conversation context is maintained per user session.
-- The user must be authenticated.
-
----
-
+  
 #### Reset Conversation
 
 **Endpoint**
