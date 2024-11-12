@@ -221,3 +221,14 @@ html{
     width:calc(var(--vert-nav-button-height) - var(--nav-border-difference));
     height:calc(var(--vert-nav-button-width) - var(--nav-border-difference));
 }
+
+.logoWrapper{
+    justify-self: center;
+    align-self: self-end;
+    grid-column: 1 / 4;
+}
+
+#logo{
+    width:15rem;
+    height:5rem;
+}
