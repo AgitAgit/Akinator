@@ -397,7 +397,7 @@ Include the JWT token and only the fields you wish to update in the request body
 
 ```http
 POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users HTTP/1.1
-Host: localhost:3000
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -435,7 +435,7 @@ Content-Type: application/json
 
 ```http
 POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/login HTTP/1.1
-Host: localhost:3000
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -465,7 +465,7 @@ Content-Type: application/json
 
 ```http
 PUT https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
-Host: localhost:3000
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -497,7 +497,7 @@ Content-Type: application/json
 
 ```http
 DELETE https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
-Host: localhost:3000
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -525,7 +525,7 @@ Content-Type: application/json
 
 ```http
 POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/chatgpt/prompt HTTP/1.1
-Host: localhost:3000
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -554,7 +554,7 @@ Content-Type: application/json
 
 ```http
 POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/chatgpt/prompt HTTP/1.1
-Host: localhost:3000
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
