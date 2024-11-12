@@ -6,23 +6,6 @@ const {
   hashUserPassword,
 } = require("../utils/bcrypt-pw.js");
 
-const getAllUsers = async (req, res) => {
-  try {
-    const getAllUsers = await userModel.find();
-
-    isFalsy(getAllUsers);
-
-    res.status(200).json({
-      message: "Success",
-      response: getAllUsers,
-    });
-  } catch (error) {
-    res.status(404).json({
-      message: `Error occurred while getting all users: ${error}`,
-    });
-  }
-};
-
 const createNewUser = async (req, res) => {
   const { fName, user, password, email } = req.body;
 
@@ -43,6 +26,7 @@ const createNewUser = async (req, res) => {
     res.status(201).json({
       message: "Success",
       response: `User has been created.`,
+      newUser,
     });
   } catch (error) {
     res.status(404).json({
@@ -168,7 +152,6 @@ const deleteUserById = async (req, res) => {
 };
 
 module.exports = {
-  getAllUsers,
   updateUserFullData,
   partialUpdateUser,
   createNewUser,
