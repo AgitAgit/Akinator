@@ -5,7 +5,7 @@ Welcome to the API documentation. This API allows users to:
 - **User Management**: Register, login, update, and delete user accounts.
 - **ChatGPT Interaction**: Engage in conversations with a GPT-based chatbot.
 
-**Base URL**: `http://localhost:3000`
+**Base URL**: `https://iitc-b-backend-server-akinator-project-w.onrender.com`
 
 ---
 
@@ -47,7 +47,7 @@ Welcome to the API documentation. This API allows users to:
 **Endpoint**
 
 ```http
-POST http://localhost:3000/api/users/users
+POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users
 ```
 
 **Description**
@@ -101,7 +101,7 @@ Creates a new user account.
 **Endpoint**
 
 ```http
-POST http://localhost:3000/api/users/users/login
+POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/login
 ```
 
 **Description**
@@ -146,7 +146,7 @@ Authenticates a user and returns a JWT token.
 **Endpoint**
 
 ```http
-PUT http://localhost:3000/api/users/users/:id
+PUT https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/:id
 ```
 
 **Description**
@@ -200,7 +200,7 @@ Updates an existing user's data completely.
 **Endpoint**
 
 ```http
-DELETE http://localhost:3000/api/users/users/:id
+DELETE https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/:id
 ```
 
 **Description**
@@ -253,7 +253,7 @@ Deletes a user account.
 **Endpoint**
 
 ```http
-POST http://localhost:3000/api/chatgpt/prompt
+POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/chatgpt/prompt
 ```
 
 **Description**
@@ -298,7 +298,7 @@ Sends a prompt to ChatGPT and receives a response.
 **Endpoint**
 
 ```http
-POST http://localhost:3000/api/chatgpt/prompt
+POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/chatgpt/prompt
 ```
 
 **Description**
@@ -380,7 +380,7 @@ Tokens are valid for 1 hour. If your token expires, you need to log in again to 
 Yes, use the `PATCH` method on the update endpoint to modify specific fields:
 
 ```http
-PATCH http://localhost:3000/api/users/users/:id
+PATCH https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/:id
 ```
 
 Include the JWT token and only the fields you wish to update in the request body.
@@ -396,7 +396,7 @@ Include the JWT token and only the fields you wish to update in the request body
 **Request**
 
 ```http
-POST http://localhost:3000/api/users/users HTTP/1.1
+POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 
@@ -434,7 +434,7 @@ Content-Type: application/json
 **Request**
 
 ```http
-POST http://localhost:3000/api/users/users/login HTTP/1.1
+POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/login HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 
@@ -464,7 +464,7 @@ Content-Type: application/json
 **Request**
 
 ```http
-PUT http://localhost:3000/api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
+PUT https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 
@@ -496,7 +496,7 @@ Content-Type: application/json
 **Request**
 
 ```http
-DELETE http://localhost:3000/api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
+DELETE https://iitc-b-backend-server-akinator-project-w.onrender.com/api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 
@@ -524,7 +524,7 @@ Content-Type: application/json
 **Request**
 
 ```http
-POST http://localhost:3000/api/chatgpt/prompt HTTP/1.1
+POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/chatgpt/prompt HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 
@@ -553,7 +553,7 @@ Content-Type: application/json
 **Request**
 
 ```http
-POST http://localhost:3000/api/chatgpt/prompt HTTP/1.1
+POST https://iitc-b-backend-server-akinator-project-w.onrender.com/api/chatgpt/prompt HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 
