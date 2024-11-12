@@ -2,29 +2,34 @@
 
 Welcome to the API documentation. This API allows users to:
 
-- **User Management**: Register, login, update, and delete user accounts.
+- **User Management**: Register, login, and update user accounts.
 - **ChatGPT Interaction**: Engage in conversations with a GPT-based chatbot.
 
-**Base URL**: `http://localhost:3000`
+**Base URL**: `https://iitc-b-backend-server-akinator-project-w.onrender.com`
 
 ---
 
 ## Table of Contents
 
-1. [Authentication](#authentication)
-2. [Endpoints](#endpoints)
+1. [Introduction](#introduction)
+2. [Authentication](#authentication)
+3. [Endpoints](#endpoints)
    - [User Endpoints](#user-endpoints)
      - [Create New User](#create-new-user)
      - [Login User](#login-user)
      - [Update User Data](#update-user-data)
-     - [Delete User](#delete-user)
    - [ChatGPT Endpoints](#chatgpt-endpoints)
      - [Talk with GPT](#talk-with-gpt)
      - [Reset Conversation](#reset-conversation)
-3. [Error Handling](#error-handling)
-4. [FAQs](#faqs)
-5. [Examples](#examples)
-6. [Final Notes](#final-notes)
+4. [Error Handling](#error-handling)
+5. [FAQs](#faqs)
+6. [Examples](#examples)
+
+---
+
+## Introduction
+
+This API provides endpoints for user management and interaction with a GPT-based chatbot. It enables developers to integrate user registration, authentication, and conversational AI features into their applications seamlessly.
 
 ---
 
@@ -40,14 +45,12 @@ Welcome to the API documentation. This API allows users to:
 
 ### User Endpoints
 
----
-
 #### Create New User
 
 **Endpoint**
 
 ```http
-POST http://localhost:3000/api/users/users
+POST /api/users/users
 ```
 
 **Description**
@@ -88,12 +91,6 @@ Creates a new user account.
   }
   ```
 
-**Notes**
-
-- Passwords are securely hashed before storage.
-- All fields are required.
-- The `password` field is not returned in the response for security reasons.
-
 ---
 
 #### Login User
@@ -101,7 +98,7 @@ Creates a new user account.
 **Endpoint**
 
 ```http
-POST http://localhost:3000/api/users/users/login
+POST /api/users/users/login
 ```
 
 **Description**
@@ -134,11 +131,6 @@ Authenticates a user and returns a JWT token.
   }
   ```
 
-**Notes**
-
-- The token expires after 1 hour.
-- Amit, your part is to store it in the cookie object in the browser.
-
 ---
 
 #### Update User Data
@@ -146,7 +138,7 @@ Authenticates a user and returns a JWT token.
 **Endpoint**
 
 ```http
-PUT http://localhost:3000/api/users/users/:id
+PUT /api/users/users/:id
 ```
 
 **Description**
@@ -185,75 +177,16 @@ Updates an existing user's data completely.
   }
   ```
 
-**Notes**
-
-- Include the JWT token in the request body with the key `"token"`.
-- This operation replaces the entire user object.
-- All fields are required for a full update.
-- The user must be authenticated.
-- Only the authenticated user can update their own data.
-
----
-
-#### Delete User
-
-**Endpoint**
-
-```http
-DELETE http://localhost:3000/api/users/users/:id
-```
-
-**Description**
-
-Deletes a user account.
-
-**Headers**
-
-- `Content-Type: application/json`
-
-**URL Parameters**
-
-- `:id` — The unique identifier of the user.
-
-**Request Body**
-
-```json
-{
-  "token": "<your_jwt_token>"
-}
-```
-
-**Response**
-
-- **Status Code**: `200 OK`
-- **Body**
-
-  ```json
-  {
-    "message": "Success",
-    "response": "User ID: 60c72b2f9e7f8e3a2c4d4567 has been successfully deleted."
-  }
-  ```
-
-**Notes**
-
-- Include the JWT token in the request body with the key `"token"`.
-- The user must be authenticated.
-- Only the authenticated user can delete their own account.
-- Use caution as this action is irreversible.
-
 ---
 
 ### ChatGPT Endpoints
-
----
 
 #### Talk with GPT
 
 **Endpoint**
 
 ```http
-POST http://localhost:3000/api/chatgpt/prompt
+POST /api/chatgpt/prompt
 ```
 
 **Description**
@@ -268,8 +201,8 @@ Sends a prompt to ChatGPT and receives a response.
 
 ```json
 {
-  "text": "Let's play akinator!",
-  "token": "<your_jwt_token>"
+  "token": "<your_jwt_token>",
+  "text": "Let's play akinator!"
 }
 ```
 
@@ -281,15 +214,9 @@ Sends a prompt to ChatGPT and receives a response.
   ```json
   {
     "message": "Success",
-    "response": "Is it a football player?..."
+    "response": "Is it a character from a movie?"
   }
   ```
-
-**Notes**
-
-- Include the JWT token in the request body with the key `"token"`.
-- The conversation context is maintained per user session.
-- The user must be authenticated.
 
 ---
 
@@ -298,7 +225,7 @@ Sends a prompt to ChatGPT and receives a response.
 **Endpoint**
 
 ```http
-POST http://localhost:3000/api/chatgpt/prompt
+POST /api/chatgpt/prompt
 ```
 
 **Description**
@@ -313,8 +240,8 @@ Resets the conversation flow for the current user.
 
 ```json
 {
-  "text": "clear",
-  "token": "<your_jwt_token>"
+  "token": "<your_jwt_token>",
+  "text": "clear"
 }
 ```
 
@@ -330,12 +257,6 @@ Resets the conversation flow for the current user.
   }
   ```
 
-**Notes**
-
-- Include the JWT token in the request body with the key `"token"`.
-- Sending "clear" as the text resets the conversation history.
-- The user must be authenticated.
-
 ---
 
 ## Error Handling
@@ -348,6 +269,8 @@ All error responses follow this structure:
 }
 ```
 
+Common error codes:
+
 - **400 Bad Request**: Missing or invalid request parameters.
 - **401 Unauthorized**: Authentication failed or token expired.
 - **403 Forbidden**: The authenticated user does not have permission to perform the operation.
@@ -357,8 +280,6 @@ All error responses follow this structure:
 ---
 
 ## FAQs
-
----
 
 **Q1: How do I include the JWT token in my requests?**
 
@@ -371,33 +292,29 @@ Include the token in the **request body** with the key `"token"` for all protect
 }
 ```
 
+---
+
 **Q2: What should I do if my token expires?**
 
 Tokens are valid for 1 hour. If your token expires, you need to log in again to receive a new token.
 
-**Q3: Can I update only certain fields of my user data?**
+---
 
-Yes, use the `PATCH` method on the update endpoint to modify specific fields:
+**Q3: How do I handle CORS issues when making requests from the frontend?**
 
-```http
-PATCH http://localhost:3000/api/users/users/:id
-```
-
-Include the JWT token and only the fields you wish to update in the request body.
+If you encounter CORS (Cross-Origin Resource Sharing) issues when making API requests from your frontend application, make sure your frontend is configured to send requests with the appropriate headers. Also, ensure that the server has CORS enabled for your domain or uses a wildcard `*` to accept requests from any domain.
 
 ---
 
 ## Examples
-
----
 
 ### Register a New User
 
 **Request**
 
 ```http
-POST http://localhost:3000/api/users/users HTTP/1.1
-Host: localhost:3000
+POST /api/users/users HTTP/1.1
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -434,8 +351,8 @@ Content-Type: application/json
 **Request**
 
 ```http
-POST http://localhost:3000/api/users/users/login HTTP/1.1
-Host: localhost:3000
+POST /api/users/users/login HTTP/1.1
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -464,8 +381,8 @@ Content-Type: application/json
 **Request**
 
 ```http
-PUT http://localhost:3000/api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
-Host: localhost:3000
+PUT /api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -491,41 +408,13 @@ Content-Type: application/json
 
 ---
 
-### Delete a User
-
-**Request**
-
-```http
-DELETE http://localhost:3000/api/users/users/60c72b2f9e7f8e3a2c4d4567 HTTP/1.1
-Host: localhost:3000
-Content-Type: application/json
-
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-}
-```
-
-**Response**
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "message": "Success",
-  "response": "User ID: 60c72b2f9e7f8e3a2c4d4567 has been successfully deleted."
-}
-```
-
----
-
 ### Talk with ChatGPT
 
 **Request**
 
 ```http
-POST http://localhost:3000/api/chatgpt/prompt HTTP/1.1
-Host: localhost:3000
+POST /api/chatgpt/prompt HTTP/1.1
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
@@ -542,7 +431,7 @@ Content-Type: application/json
 
 {
   "message": "Success",
-  "response": "Did you see it in a movie or read about it in a book?"
+  "response": "Is it a creature from mythology or folklore?"
 }
 ```
 
@@ -553,8 +442,8 @@ Content-Type: application/json
 **Request**
 
 ```http
-POST http://localhost:3000/api/chatgpt/prompt HTTP/1.1
-Host: localhost:3000
+POST /api/chatgpt/prompt HTTP/1.1
+Host: iitc-b-backend-server-akinator-project-w.onrender.com
 Content-Type: application/json
 
 {
