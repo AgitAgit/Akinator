@@ -24,8 +24,6 @@ Welcome to the API documentation. This API allows users to:
 3. [Error Handling](#error-handling)
 4. [FAQs](#faqs)
 5. [Examples](#examples)
-6. [Final Notes](#final-notes)
-
 ---
 
 ## Authentication
@@ -88,14 +86,6 @@ Creates a new user account.
   }
   ```
 
-**Notes**
-
-- Passwords are securely hashed before storage.
-- All fields are required.
-- The `password` field is not returned in the response for security reasons.
-
----
-
 #### Login User
 
 **Endpoint**
@@ -133,13 +123,6 @@ Authenticates a user and returns a JWT token.
     "token": "<jwt_token>"
   }
   ```
-
-**Notes**
-
-- The token expires after 1 hour.
-- Amit, your part is to store it in the cookie object in the browser.
-
----
 
 #### Update User Data
 
@@ -184,16 +167,6 @@ Updates an existing user's data completely.
   }
   ```
 
-**Notes**
-
-- Include the JWT token in the request body with the key `"token"`.
-- This operation replaces the entire user object.
-- All fields are required for a full update.
-- The user must be authenticated.
-- Only the authenticated user can update their own data.
-
----
-
 #### Delete User
 
 **Endpoint**
@@ -233,15 +206,6 @@ Deletes a user account.
     "response": "User ID: 60c72b2f9e7f8e3a2c4d4567 has been successfully deleted."
   }
   ```
-
-**Notes**
-
-- Include the JWT token in the request body with the key `"token"`.
-- The user must be authenticated.
-- Only the authenticated user can delete their own account.
-- Use caution as this action is irreversible.
-
----
 
 ### ChatGPT Endpoints
 
@@ -320,14 +284,6 @@ Resets the conversation flow for the current user.
     "response": "Conversation has been reset."
   }
   ```
-
-**Notes**
-
-- Include the JWT token in the request body with the key `"token"`.
-- Sending "clear" as the text resets the conversation history.
-- The user must be authenticated.
-
----
 
 ## Error Handling
 
