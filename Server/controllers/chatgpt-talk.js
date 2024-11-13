@@ -21,9 +21,15 @@ const chatgptTalk = async (req, res) => {
   });
 
   if (userInput === "clear") {
-    messagesFlow = [];
+    messagesFlow = [
+      {
+        role: "user",
+        content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses, ask your first question.`,
+      },
+    ];
     res.status(200).json({
-      message: "Chat has been cleared",
+      message: "Success",
+      response: "Chat has been cleared.",
     });
     return;
   }
