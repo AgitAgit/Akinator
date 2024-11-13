@@ -52,7 +52,7 @@ const chatgptTalk = async (req, res) => {
 let messagesFlow = [
   {
     role: "user",
-    content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses.`,
+    content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses, ask your first question.`,
   },
 ];
 
