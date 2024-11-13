@@ -1,12 +1,15 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
+const dotenv = require("dotenv");
 const logger = require("./middlewares/logger.js");
 const errorHandle = require("./middlewares/error-handle.js");
 const notValidPath = require("./middlewares/not-valid-path.js");
 const connectDB = require("./config/connect-db.js");
 const aiRoute = require("./routers/ai-route.js");
 const usersRoute = require("./routers/users-route.js");
+
+dotenv.config();
 
 const app = express();
 
