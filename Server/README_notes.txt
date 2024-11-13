@@ -9,3 +9,7 @@ protected route.
 ROUTE NAMES
 post api/users/users repeats users twice. It would be more aesthetic if it were something like
 api/users/ or api/users/add
+
+MISSING ROUTES
+I would like to have a route to get the user's info based on his username.
+Especially the user's ID.

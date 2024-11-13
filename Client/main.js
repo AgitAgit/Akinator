@@ -1,5 +1,15 @@
-import { registerUser } from "./Communication_Center/userData.js";
+import { registerUser, loginUser } from "./Communication_Center/userData.js";
+import { prompt, restartSession } from "./Communication_Center/gptData.js";
 
-const reply = await registerUser("test1", "test1", "test1", "test1");
+const baba = "test1";
 
-console.log("the server response to register user is:", reply);
+// const reply = await registerUser("test1", "test1", "test1", "test1");
+// const reply = await loginUser(baba,baba);
+
+let reply = await loginUser(baba, baba);
+
+const token = reply.token;
+
+reply = await prompt(token, "");
+console.log("the client is waiting for a response...");
+console.log("the server response is:", reply);
