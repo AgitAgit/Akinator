@@ -136,7 +136,7 @@ const deleteUserById = async (req, res) => {
   const userId = req.params.id;
 
   try {
-    const deleteUser = userModel.findByIdAndDelete(userId);
+    const deleteUser = await userModel.findByIdAndDelete(userId);
 
     isFalsy(deleteUser);
 
