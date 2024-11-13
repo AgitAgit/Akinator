@@ -1,160 +1,64 @@
-const isFalsy = require("../utils/is-falsy.js");
+const OpenAI = require("openai");
 const jwt = require("jsonwebtoken");
-const { userModel } = require("../models/user-schema.js");
-const {
-  validateUserPassword,
-  hashUserPassword,
-} = require("../utils/bcrypt-pw.js");
+const isFalsy = require("../utils/is-falsy.js");
 
-const createNewUser = async (req, res) => {
-  const { fName, user, password, email } = req.body;
+const chatgptTalk = async (req, res) => {
+  const userInput = req.body.text;
+  const token = req.body.token;
 
-  let hashedPassword = await hashUserPassword(password + process.env.SECRET_PW);
+  const decoded = jwt.verify(token, process.env.SECRET_JWT);
+  console.log(decoded);
 
-  isFalsy(hashedPassword);
+  isFalsy(decoded);
 
-  try {
-    const newUser = await userModel.create({
-      fName,
-      user,
-      password: hashedPassword,
-      email,
-    });
+  const openAIClient = new OpenAI({
+    apiKey: process.env.OPEN_AI_API_KEY,
+  });
 
-    isFalsy(newUser);
+  messagesFlow.push({
+    role: "user",
+    content: `My name is ${decoded.fName} ` + userInput,
+  });
 
-    res.status(201).json({
-      message: "Success",
-      response: `User has been created.`,
-      newUser,
-    });
-  } catch (error) {
-    res.status(404).json({
-      message: `Error occurred while creating a new user: ${error}`,
-    });
-  }
-};
-
-const validateUser = async (req, res) => {
-  const { fName, email, password } = req.body;
-
-  try {
-    const user = await userModel.findOne({ email });
-
-    isFalsy(user);
-
-    const isValidatePassword = await validateUserPassword(
-      password,
-      user.password
-    );
-
-    isFalsy(isValidatePassword);
-
-    const generateToken = jwt.sign(
-      { fName: user.fName, email: user.email },
-      process.env.SECRET_JWT,
+  if (userInput === "clear") {
+    messagesFlow = [
       {
-        expiresIn: "1h",
-      }
-    );
+        role: "user",
+        content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses. ask your first question.`,
+      },
+    ];
+    res.status(200).json({
+      message: "Chat has been cleared",
+    });
+    return;
+  }
 
-    isFalsy(generateToken);
+  try {
+    const chatCompletion = await openAIClient.chat.completions.create({
+      messages: messagesFlow,
+      model: "gpt-4",
+    });
+
+    const responseContent = chatCompletion.choices[0].message.content;
+
+    messagesFlow.push({ role: "assistant", content: responseContent });
 
     res.status(200).json({
-      message: "Success",
-      response: "User has logged in successfully",
-      token: generateToken,
+      message: "success",
+      response: responseContent,
     });
+
+    console.log(messagesFlow);
   } catch (error) {
-    res.status(404).json({
-      message: `Error occurred while trying to validate user: ${error}`,
-    });
+    res.status(500).json({ error: "An error occurred with the AI request" });
   }
 };
 
-const updateUserFullData = async (req, res) => {
-  const userId = req.params.id;
-  const { user, password, email } = req.body;
+let messagesFlow = [
+  {
+    role: "user",
+    content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses. ask your first question.`,
+  },
+];
 
-  try {
-    const isUpdated = await userModel.findOneAndUpdate(
-      { _id: userId },
-      {
-        user,
-        password,
-        email,
-      },
-      {
-        new: true,
-      }
-    );
-
-    isFalsy(isUpdated);
-
-    res.status(201).json({
-      message: "Success",
-      response: `User ID: ${userId} has been updated.`,
-    });
-  } catch (error) {
-    res.status(404).json({
-      message: `Error occurred while updating user ID ${userId}: ${error}`,
-    });
-  }
-};
-
-const partialUpdateUser = async (req, res) => {
-  const userId = req.params.id;
-  const { user, password, email } = req.body;
-
-  try {
-    const isUpdated = await userModel.findOneAndUpdate(
-      { _id: userId },
-      {
-        user,
-        password,
-        email,
-      },
-      {
-        new: true,
-      }
-    );
-
-    isFalsy(isUpdated);
-
-    res.status(201).json({
-      message: "Success",
-      response: `User has been updated.`,
-    });
-  } catch (error) {
-    res.status(404).json({
-      message: `Error occurred while updating user ID ${userId}: ${error}`,
-    });
-  }
-};
-
-const deleteUserById = async (req, res) => {
-  const userId = req.params.id;
-
-  try {
-    const deleteUser = await userModel.findByIdAndDelete(userId);
-
-    isFalsy(deleteUser);
-
-    res.status(200).json({
-      message: "Success",
-      response: `User ${userId} has been successfully deleted.`,
-    });
-  } catch (error) {
-    res.status(404).json({
-      message: `Error occurred while deleting user ID ${userId}: ${error}`,
-    });
-  }
-};
-
-module.exports = {
-  updateUserFullData,
-  partialUpdateUser,
-  createNewUser,
-  deleteUserById,
-  validateUser,
-};
+module.exports = chatgptTalk;
