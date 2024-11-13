@@ -1,0 +1,242 @@
+/* To improve: 
+*  Try to replace borders with shadow? Might allow better control of the shadow's shape. 
+*  Could also help with the shape of the round buttons.
+*/
+
+@font-face {
+    font-family: 'neue';
+    src: url('./Assets/Fonts/classic_console_neue/clacon2.ttf');
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+  
+:root{
+    --myoo-mini-plus-theme:#E1E5E7;
+    --dark-main-color:#0e0f19;
+    --contrast-buttons:#4F1787;
+
+    --device-width:30rem;
+
+    --normal-button-width: 5rem;
+    --normal-button-height: 2rem;
+
+    --normal-button-border-width:5px;
+    --normal-pressed-button-border-width:2px;
+    --normal-border-difference:3px;
+
+    --vert-nav-button-height: 2rem;
+    --vert-nav-button-width: 0.8rem;
+
+    --nav-button-border-width: 3px;
+    --nav-pressed-button-border-width:1px;
+    --nav-border-difference:2px;
+}
+
+html{
+    background-color:#393E46;
+}
+
+.mainDiv{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The console emulator */
+.device{
+    box-sizing:content-box;
+    width:var(--device-width);
+    height:var(--device-width);
+    background-color:lightgray;
+    display:grid;
+    grid-template-rows: 20rem 10rem;
+    /* padding:1rem; */
+    /* border-radius: 0.5rem; */
+    border-right: 10px solid grey;
+    border-bottom: 10px solid grey;
+}
+
+/* Screen area */
+.deviceScreenWrapper{
+    padding:1rem;
+    height:100%;
+    width:100%;
+}
+
+.deviceScreen{
+    background-color: black;
+    /* width: 28rem; */
+    /* aspect-ratio: 3 / 2; */
+    width:100%;
+    height:100%;
+    border-top:5px solid grey;
+    border-left:5px solid grey;
+    color:green;
+    font-size: 1.2rem;
+    font-family: 'neue', monospace;
+}
+
+/* Input area */
+.deviceInputWrapper{
+    padding:1rem;
+    padding-top: 0;
+    width:100%;
+    height:100%;
+}
+
+.buttonsDiv{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.systemButtons{
+    justify-self: center;
+    align-self:self-start;
+    grid-column: 2 / 3;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:0.2rem;
+}
+
+.powerWrapper{
+    box-sizing: content-box;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:2rem;
+    height:2rem;
+    border:1px solid gray;
+    border-right:5px solid gray;
+    border-bottom:5px solid gray;
+    border-radius: 50%;
+}
+
+.powerWrapper:hover{
+    /* what if I define the box sizing differently? Could it help avoid changing the size of the button? */
+    border-right:2px solid gray;
+    border-bottom:2px solid gray;
+    translate: 3px 3px;
+}
+
+#power, #menu{
+    /* margin:5px; */
+    width:1rem;
+    height:1rem;
+    border-radius:50%;
+}
+
+/* Answer buttons area */
+.buttonsCluster{
+    align-self: center;
+    grid-column: 3 / 4;
+    display:grid;
+    grid-template-columns: repeat(2, 5rem);
+    grid-template-rows: repeat(2, 2rem);
+    gap:3px;
+}
+
+.buttonsCluster button{
+    width:5rem;
+    height:2rem;
+    /* padding:0.3rem; */
+    border-top:none;
+    border-right: 5px solid grey;
+    border-bottom: 5px solid grey;
+    border-left:none;
+}
+
+.buttonsCluster button:hover{
+    border-right: 2px solid grey;
+    border-bottom: 2px solid grey;
+    transform: translate(3px, 3px);
+    width:calc(var(--normal-button-width) - 3px);
+    height:calc(var(--normal-button-height) - 3px);
+}
+
+.navigationButtons{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: center;
+    display:grid;
+    grid-template-columns: 1fr calc(var(--vert-nav-button-width) + 10px) 1fr;
+    grid-template-rows: 1fr calc(var(--vert-nav-button-width) + 10px) 1fr;
+    justify-items:center;
+    align-items: center;
+}
+
+.navigationButtons button{
+    border-right: var(--nav-button-border-width) solid grey;
+    border-bottom: var(--nav-button-border-width) solid grey;
+}
+
+.navigationButtons button:hover{
+    border-right: var(--nav-pressed-button-border-width) solid grey;
+    border-bottom: var(--nav-pressed-button-border-width) solid grey;
+    transform: translate(2px, 2px);
+}
+
+#up{
+    width:var(--vert-nav-button-width);
+    height:var(--vert-nav-button-height);
+    border-top:none;
+    border-left:none;
+    grid-column-start:2;
+}
+
+#right{
+    width:var(--vert-nav-button-height);
+    height:var(--vert-nav-button-width);
+    border-top:none;
+    border-left:none;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    justify-self: start;
+}
+
+#down{
+    width:var(--vert-nav-button-width);
+    height:var(--vert-nav-button-height);
+    border-top:none;
+    border-left:none;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+#left{
+    width:var(--vert-nav-button-height);
+    height:var(--vert-nav-button-width);
+    border-top:none;
+    border-left:none;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-self: end;
+}
+
+#up:hover, #down:hover{
+    width:calc(var(--vert-nav-button-width) - var(--nav-border-difference));
+    height:calc(var(--vert-nav-button-height) - var(--nav-border-difference));
+}
+
+#right:hover, #left:hover{
+    width:calc(var(--vert-nav-button-height) - var(--nav-border-difference));
+    height:calc(var(--vert-nav-button-width) - var(--nav-border-difference));
+}
+
+.logoWrapper{
+    justify-self: center;
+    align-self: self-end;
+    grid-column: 1 / 4;
+}
+
+#logo{
+    width:15rem;
+    height:5rem;
+}
