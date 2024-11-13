@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 const logger = require("./middlewares/logger.js");
 const errorHandle = require("./middlewares/error-handle.js");
 const notValidPath = require("./middlewares/not-valid-path.js");
@@ -9,6 +10,7 @@ const usersRoute = require("./routers/users-route.js");
 
 const app = express();
 
+app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(logger);
