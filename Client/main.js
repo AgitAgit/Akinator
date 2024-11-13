@@ -10,6 +10,11 @@ let reply = await loginUser(baba, baba);
 
 const token = reply.token;
 
-reply = await prompt(token, "");
+
+reply = await restartSession(token);
 console.log("the client is waiting for a response...");
 console.log("the server response is:", reply);
+
+// reply = await prompt(token, "Yes");
+// console.log("the client is waiting for a response...");
+// console.log("the server response is:", reply);
