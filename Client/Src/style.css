@@ -240,3 +240,7 @@ html{
     width:15rem;
     height:5rem;
 }
+
+.hidden{
+    display:none;
+}
