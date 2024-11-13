@@ -1,1 +1,22 @@
 Visual idea: A retro game console.
+
+//const baba = "test1";
+
+// const reply = await registerUser("test1", "test1", "test1", "test1");
+// const reply = await loginUser(baba,baba);
+
+// let reply = await loginUser(baba, baba);
+
+// const token = reply.token;
+
+// console.log("waiting for server response...");
+// reply = await restartGame(token);
+// console.log("server response:", reply);
+
+// console.log("waiting for server response...");
+// reply = await prompt(token, "no");
+// console.log("server response:", reply);
+
+// console.log("waiting for server response...");
+// reply = await prompt(token, "yes");
+// console.log("server response:", reply);
