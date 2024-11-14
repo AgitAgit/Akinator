@@ -54,3 +54,5 @@ function screenOff(){
 function clearScreen(){
     screenText.textContent = "";
 }
+
+function playRandomClick(){}
