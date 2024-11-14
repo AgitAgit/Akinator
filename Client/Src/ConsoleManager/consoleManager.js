@@ -6,6 +6,10 @@
 //for each character?) and a slower one for a small
 //delay at the end of each word.
 
+//Will replacing the p element with text area allow me to enter line breaks?
+//Maybe I should just attach spans and <br> elements for each sentence
+//In the update screen function.
+
 const screenText = document.querySelector("#screen-text");
 
 const testText = "This is a test for the update screen.\nTell all the truth but tell it slant\nsuccess in circuit lies\nToo bright for our infirm delight\nthe truths superb surprise\nAs lightning to the children eased\nwith explanation kind\nThe truth must dazzle gradually\nor every man be blind";
