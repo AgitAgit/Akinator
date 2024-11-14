@@ -81,6 +81,12 @@ html{
     font-family: 'neue', monospace;
 }
 
+.screenText{
+    color:green;
+    font-size: 1.2rem;
+    font-family: 'neue', monospace;
+}
+
 /* Input area */
 .deviceInputWrapper{
     padding:1rem;
