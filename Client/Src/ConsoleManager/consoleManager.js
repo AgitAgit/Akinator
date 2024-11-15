@@ -41,9 +41,14 @@ export const updateScreen = function(text, counter = 0){
     if(counter === text.length){
         return;
     }
-
-    document.querySelector(".screen-text").textContent += text.charAt(counter);
-    setTimeout(() => updateScreen(text, counter + 1), 100);
+    if(counter % 40 === 0){
+        document.querySelector(".screen-text").textContent += `\n${text.charAt(counter)}`;
+        setTimeout(() => updateScreen(text, counter + 1), 1);//change back after testing
+    }
+    else{
+        document.querySelector(".screen-text").textContent += text.charAt(counter);
+        setTimeout(() => updateScreen(text, counter + 1), 1);//change back after testing
+    }
 }
 
 async function screenFlicker(){

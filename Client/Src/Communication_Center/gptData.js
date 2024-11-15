@@ -1,6 +1,6 @@
 const server_base_url = 'https://iitc-b-backend-server-akinator-project-w.onrender.com/api/chatgpt/prompt';
 const local_base_url = 'http://localhost:3000/api/chatgpt/prompt';
-const current_base_url = server_base_url;
+const current_base_url = local_base_url;
 
 //response is of the form: { ..., data: { message:(string), response:(string) } }
 //returns: An object of the form: { message:(string), response:(string) } 
