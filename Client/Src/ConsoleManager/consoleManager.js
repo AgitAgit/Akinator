@@ -25,15 +25,15 @@ document.querySelectorAll('button').forEach(button => button.addEventListener('c
 
 //could add a click sound to all buttons with query selector all
 
-export const initScreen = function(){
+export const initScreen = function(message){
     const intervalId = setInterval(screenFlicker, 1500);
-    updateScreen(testText);
+    updateScreen(message);
 }
 
 export const updateScreen = function(text, counter = 0){
     if(counter === 0){
         clearScreen();
-        const screenText = document.createElement("pre");
+        const screenText = document.createElement("p");
         screenText.classList.add("screen-text");
         screen.appendChild(screenText);
     }
@@ -41,14 +41,14 @@ export const updateScreen = function(text, counter = 0){
     if(counter === text.length){
         return;
     }
-    if(counter % 40 === 0){
-        document.querySelector(".screen-text").textContent += `\n${text.charAt(counter)}`;
-        setTimeout(() => updateScreen(text, counter + 1), 1);//change back after testing
-    }
-    else{
+    // if(counter % 40 === 0){
+    //     document.querySelector(".screen-text").textContent += `\n${text.charAt(counter)}`;
+    //     setTimeout(() => updateScreen(text, counter + 1), 1);//change back after testing
+    // }
+    // else{
         document.querySelector(".screen-text").textContent += text.charAt(counter);
         setTimeout(() => updateScreen(text, counter + 1), 1);//change back after testing
-    }
+    // }
 }
 
 async function screenFlicker(){

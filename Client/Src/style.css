@@ -69,6 +69,7 @@ html{
 }
 
 .deviceScreen{
+    padding:0.3rem;
     background-color: black;
     /* width: 28rem; */
     /* aspect-ratio: 3 / 2; */
@@ -89,6 +90,7 @@ html{
     font-size: 1.2rem;
     font-family: 'neue', monospace;
     max-width: 448px;
+    /* white-space:pre-line; */
 }
 
 /* Input area */

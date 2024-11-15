@@ -26,9 +26,10 @@ async function startGame(user = defaultUser){
         console.log("Trying to login user...");
         const data = await loginUser(user.email, user.password);
         token = data.token;
+        restartSession(token);
         const response = await prompt(token, '');
-        const text = `Hello ${user.fName}. ${startMessage}\n${response.response}`;;
-        updateScreen(text);
+        const message = `Hello ${user.fName}. ${startMessage}\n${response.response}`;;
+        updateScreen(message);
         mode = 'game';
     } catch(error){
         console.log(error);
@@ -47,7 +48,7 @@ async function handleChoiceButtonClick(event){
     }
 }
 
-//initScreen();
+initScreen("Hello. To start as a guest, press one of the choice buttons. To login or sign up, press the menu button.");
 
 // startGame(defaultUser);
 
