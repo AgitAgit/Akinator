@@ -24,7 +24,8 @@ const chatgptTalk = async (req, res) => {
     messagesFlow = [
       {
         role: "user",
-        content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses, ask your first question.`,
+        content: `You are an expert in the akinator game. Your goal is to guess the character, animal, or object I am thinking of in the shortest number of questions. 
+        Each question you ask must be designed so that I can respond with one of the following: "yes," "no," or "not sure." Begin the game by asking your first question.`,
       },
     ];
     res.status(200).json({
@@ -56,10 +57,11 @@ const chatgptTalk = async (req, res) => {
 };
 
 let messagesFlow = [
-  {
-    role: "user",
-    content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses, ask your first question.`,
-  },
+      {
+        role: "user",
+        content: `You are an expert in the akinator game. Your goal is to guess the character, animal, or object I am thinking of in the shortest number of questions. 
+        Each question you ask must be designed so that I can respond with one of the following: "yes," "no," or "not sure." Begin the game by asking your first question.`,
+      },
 ];
 
 module.exports = chatgptTalk;
