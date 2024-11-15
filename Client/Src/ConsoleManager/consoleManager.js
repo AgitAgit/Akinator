@@ -47,7 +47,7 @@ export const updateScreen = function(text, counter = 0){
     // }
     // else{
         document.querySelector(".screen-text").textContent += text.charAt(counter);
-        setTimeout(() => updateScreen(text, counter + 1), 1);//change back after testing
+        setTimeout(() => updateScreen(text, counter + 1), 30);//change back after testing
     // }
 }
 
