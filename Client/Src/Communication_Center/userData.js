@@ -6,7 +6,7 @@ const current_base_url = server_base_url;
 //returns:
 export const registerUser = async function(firstName, userName, password, email){
     try{
-        const reply = await axios.post(`${current_base_url}/users`,{
+        const reply = await axios.post(`${current_base_url}/register`,{
             fName: firstName,
             user: userName,
             password: password,
@@ -22,7 +22,7 @@ export const registerUser = async function(firstName, userName, password, email)
 //returns: An object of the form: { ..., data: { message:(string), response:(string), token(string) } }
 export const loginUser = async function(email, password){
     try{
-        const reply = await axios.post(`${current_base_url}/users/login`,{
+        const reply = await axios.post(`${current_base_url}/login`,{
             email,
             password
         });
