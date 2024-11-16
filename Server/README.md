@@ -198,7 +198,7 @@ This API supports **User Management** and **ChatGPT Interaction** functionalitie
 ```json
 {
   "user": {
-    "_id": "user_id",
+    "_id": "63ed2e4fb7f367c92578e526",
     "fName": "John",
     "user": "john_doe",
     "email": "john@example.com"
