@@ -1,1 +1,1 @@
-# [Akinator](https://agitagit.github.io/Akinator/Client/src)
+# [Akinator](https://agitagit.github.io/Akinator/Client/Src)
