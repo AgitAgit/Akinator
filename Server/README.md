@@ -201,20 +201,11 @@ This API supports **User Management** and **ChatGPT Interaction** functionalitie
     "_id": "63ed2e4fb7f367c92578e526",
     "fName": "John",
     "user": "john_doe",
+    "password": "the password is returned hashed",
     "email": "john@example.com"
   }
 }
 ```
-
-##### FAQs:
-
-1. **Does this endpoint return sensitive user data?**  
-   A: No, sensitive information like passwords is excluded.
-
-2. **Can this endpoint be used without a token?**  
-   A: No, it requires authentication.
-
----
 
 ### 2. **ChatGPT Interaction Endpoints**
 
@@ -228,7 +219,7 @@ This API supports **User Management** and **ChatGPT Interaction** functionalitie
 
 ```json
 {
-  "token": "<jwt_token>",
+  "token": "jwt_token",
   "text": ""
 }
 ```
@@ -265,7 +256,7 @@ This API supports **User Management** and **ChatGPT Interaction** functionalitie
 
 ```json
 {
-  "token": "<jwt_token>",
+  "token": "jwt_token",
   "text": "clear"
 }
 ```
@@ -298,5 +289,3 @@ This API supports **User Management** and **ChatGPT Interaction** functionalitie
 - **403 Forbidden**: User lacks permission for the requested action.
 - **404 Not Found**: Resource does not exist or is unavailable.
 - **500 Internal Server Error**: Unexpected server-side error.
-
----
