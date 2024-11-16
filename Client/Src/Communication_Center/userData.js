@@ -26,6 +26,8 @@ export const loginUser = async function(email, password){
             email,
             password
         });
+        console.log(reply);
+        console.log(reply.data);
         return reply.data;
     } catch (error){
         console.log("Communication_Center.userData.loginUser says:", error);

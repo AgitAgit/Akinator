@@ -1,5 +1,5 @@
 import { registerUser, loginUser } from "./Communication_Center/userData.js";
-import { prompt, restartSession, restartGame } from "./Communication_Center/gptData.js";
+import { prompt, restartSession } from "./Communication_Center/gptData.js";
 import { initScreen, updateScreen, displayMenu } from "./ConsoleManager/consoleManager.js";
 
 const menuButton = document.querySelector("#menu");
@@ -31,8 +31,8 @@ async function startGame(user = defaultUser){
         console.log("Trying to login user...");
         const data = await loginUser(user.email, user.password);
         token = data.token;
-        restartSession(token);
-        const response = await prompt(token, '');
+        await restartSession(token);
+        const response = await prompt(token, " ");
         const message = `Hello ${user.fName}. ${startMessage}\n${response.response}`;;
         updateScreen(message);
         mode = 'game';
@@ -53,9 +53,9 @@ async function handleChoiceButtonClick(event){
     }
 }
 
-function goToMenu(index=0){
+function goToMenu(markerIndex=0){
     mode = "menu";
-    displayMenu(index);
+    displayMenu(markerIndex);
 }
 
-// initScreen("Hello. To start as a guest, press one of the choice buttons. To login or sign up, press the menu button.");
+initScreen("Hello. To start as a guest, press one of the choice buttons. To login or sign up, press the menu button.");

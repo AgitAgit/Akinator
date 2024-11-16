@@ -30,8 +30,9 @@ export const restartSession = async function(token){
     }
 }
 
-export const restartGame = async function(token){
-    await restartSession(token);
-    const reply = await prompt(token, "");
-    return reply.response;
-}
+//Deprecated due to api change?
+// export const restartGame = async function(token){
+//     await restartSession(token);
+//     const reply = await prompt(token, " ");
+//     return reply.response;
+// }

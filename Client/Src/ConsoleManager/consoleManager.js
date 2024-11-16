@@ -66,11 +66,11 @@ async function screenFlicker(){
 }
 
 function screenOn(){
-    document.querySelector(".screen-text")?.classList.remove("hidden");
+    document.querySelectorAll(".screen-text")?.forEach(textItem => textItem.classList.remove("hidden"));
 }
 
 function screenOff(){
-    document.querySelector(".screen-text")?.classList.add("hidden");
+    document.querySelectorAll(".screen-text")?.forEach(textItem => textItem.classList.add("hidden"));
 }
 
 function clearScreen(){
@@ -82,10 +82,8 @@ export async function displayMenu(markerIndex){
     const options = [];
     for(let i = 0; i < 3; i++){
         const item = document.createElement('p');
+        item.classList.add("screen-text");
         const newLine = document.createElement('br');
-        if(i === markerIndex){
-            item.textContent += '>';
-        }
         if(i == 0){
             item.textContent += "Log in";
         }
@@ -94,6 +92,9 @@ export async function displayMenu(markerIndex){
         }
         if(i == 2){
             item.textContent += "Return to game";
+        }
+        if(i === 0){
+            item.textContent += '<';
         }
         screen.appendChild(item);
         screen.appendChild(newLine);
