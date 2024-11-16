@@ -6,6 +6,24 @@ const {
   hashUserPassword,
 } = require("../utils/bcrypt-pw.js");
 
+const getUserDataById = async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const findUserById = await userModel.find({ _id: userId });
+    isFalsy(findUserById);
+
+    res.status(200).json({
+      message: "Success",
+      response: findUserById,
+    });
+  } catch (error) {
+    res.status(404).json({
+      message: "Failed",
+      response: `Error occurred while searching for user Id: ${userId}`,
+    });
+  }
+};
+
 const createNewUser = async (req, res) => {
   const { fName, user, password, email } = req.body;
 
@@ -36,7 +54,7 @@ const createNewUser = async (req, res) => {
 };
 
 const validateUser = async (req, res) => {
-  const { fName, email, password } = req.body;
+  const { email, password } = req.body;
 
   try {
     const user = await userModel.findOne({ email });
@@ -50,13 +68,11 @@ const validateUser = async (req, res) => {
 
     isFalsy(isValidatePassword);
 
-    const generateToken = jwt.sign(
-      { fName: user.fName, email: user.email },
-      process.env.SECRET_JWT,
-      {
-        expiresIn: "1h",
-      }
-    );
+    const payload = { fName: user.fName, email: user.email };
+    const secret = process.env.SECRET_JWT;
+    const expire = { expiresIn: "1h" };
+
+    const generateToken = jwt.sign(payload, secret, expire);
 
     isFalsy(generateToken);
 
@@ -156,5 +172,6 @@ module.exports = {
   partialUpdateUser,
   createNewUser,
   deleteUserById,
+  getUserDataById,
   validateUser,
 };

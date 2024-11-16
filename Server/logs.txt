@@ -1,4 +1,385 @@
 
+    Time: 11/16/2024, 3:06:11 PM 
+    Method: POST 
+    URL: /api/users/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:06:22 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:07:56 PM 
+    Method: POST 
+    URL: /api/users/register 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:09:04 PM 
+    Method: POST 
+    URL: /api/users/register 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:09:10 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:09:23 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:10:24 PM 
+    Method: GET 
+    URL: /api/users/guest 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:11:14 PM 
+    Method: GET 
+    URL: /api/users/67389970ca8878d97984ad3c 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:11:20 PM 
+    Method: GET 
+    URL: /api/users/67389970ca8878d97984ad3c 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:12:06 PM 
+    Method: GET 
+    URL: /api/users/67389970ca8878d97984ad3c 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:12:08 PM 
+    Method: GET 
+    URL: /api/users/67389970ca8878d97984ad3c 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:13:23 PM 
+    Method: GET 
+    URL: /api/users/67389970ca8878d97984ad3c 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:13:42 PM 
+    Method: POST 
+    URL: /api/users/register 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:13:44 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:13:55 PM 
+    Method: GET 
+    URL: /api/users/67389970ca8878d97984ad3c 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:14:02 PM 
+    Method: GET 
+    URL: /api/users/67389a86b02e2a57eabcb51b 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:15:50 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:22:50 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:23:31 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:23:35 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:23:43 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:24:51 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:27:04 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:27:39 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:27:46 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:34:05 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:34:32 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:34:39 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:38:21 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:38:29 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:38:33 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:38:59 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:39:22 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:40:17 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:42:28 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:42:36 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:42:45 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:42:49 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:42:52 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:43:09 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:43:24 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:20 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:26 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:44 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:47 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:48 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:52 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:54 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:55 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:44:57 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:45:00 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:45:01 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:45:04 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:45:06 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:45:42 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:45:49 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:45:53 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:45:57 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:01 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:02 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:04 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:05 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:09 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:15 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:18 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:19 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:21 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:23 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:25 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:27 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:29 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:33 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:34 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:46:36 PM 
+    Method: POST 
+    URL: /api/chatgpt/prompt 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:54:29 PM 
+    Method: POST 
+    URL: /api/users/login 
+    IP: ::1 
+  
+    Time: 11/16/2024, 3:54:38 PM 
+    Method: POST 
+    URL: /api/chatgpt/clear 
+    IP: ::1 
+  
+
     Time: 11/13/2024, 11:46:33 AM 
     Method: POST 
     URL: /api/users/users 
