@@ -1,12 +1,17 @@
 import { registerUser, loginUser } from "./Communication_Center/userData.js";
 import { prompt, restartSession, restartGame } from "./Communication_Center/gptData.js";
-import { initScreen, updateScreen } from "./ConsoleManager/consoleManager.js";
+import { initScreen, updateScreen, displayMenu } from "./ConsoleManager/consoleManager.js";
+
+const menuButton = document.querySelector("#menu");
 
 const yesButton = document.querySelector("#yes");
 const noButton = document.querySelector("#no");
 const maybeButton = document.querySelector("#maybe");
 
-document.querySelectorAll(".choice-button").forEach(button => {
+const choiceButtons = [yesButton, noButton, maybeButton];
+
+menuButton.addEventListener('click', goToMenu);
+choiceButtons.forEach(button => {
     button.addEventListener('click', (event) => handleChoiceButtonClick(event));
 })
 
@@ -48,12 +53,9 @@ async function handleChoiceButtonClick(event){
     }
 }
 
-initScreen("Hello. To start as a guest, press one of the choice buttons. To login or sign up, press the menu button.");
+function goToMenu(index=0){
+    mode = "menu";
+    displayMenu(index);
+}
 
-// startGame(defaultUser);
-
-//main flow:
-//Show the menu in the console -> start as guest -> initGame
-
-
-//menu options: start as guest, login(opens login/signup page)
+// initScreen("Hello. To start as a guest, press one of the choice buttons. To login or sign up, press the menu button.");

@@ -41,14 +41,23 @@ export const updateScreen = function(text, counter = 0){
     if(counter === text.length){
         return;
     }
-    // if(counter % 40 === 0){
-    //     document.querySelector(".screen-text").textContent += `\n${text.charAt(counter)}`;
-    //     setTimeout(() => updateScreen(text, counter + 1), 1);//change back after testing
-    // }
-    // else{
-        document.querySelector(".screen-text").textContent += text.charAt(counter);
-        setTimeout(() => updateScreen(text, counter + 1), 30);//change back after testing
-    // }
+    
+    document.querySelector(".screen-text").textContent += text.charAt(counter);
+    setTimeout(() => updateScreen(text, counter + 1), 30);
+}
+
+function gradualText(element, text, counter = 0){
+    if(counter === 0){
+        const screenText = element;
+        screenText.classList.add("screen-text");
+    }
+
+    if(counter === text.length){
+        return;
+    }
+    
+    element.textContent += text.charAt(counter);
+    setTimeout(() => gradualText(element, text, counter + 1), 30);
 }
 
 async function screenFlicker(){
@@ -68,4 +77,25 @@ function clearScreen(){
     document.querySelector(".deviceScreen").innerHTML = "";
 }
 
-function playRandomClick(){}
+export async function displayMenu(markerIndex){
+    clearScreen();
+    const options = [];
+    for(let i = 0; i < 3; i++){
+        const item = document.createElement('p');
+        const newLine = document.createElement('br');
+        if(i === markerIndex){
+            item.textContent += '>';
+        }
+        if(i == 0){
+            item.textContent += "Log in";
+        }
+        if(i == 1){
+            item.textContent += "Sign up";
+        }
+        if(i == 2){
+            item.textContent += "Return to game";
+        }
+        screen.appendChild(item);
+        screen.appendChild(newLine);
+    }
+}
