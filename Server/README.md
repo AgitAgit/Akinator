@@ -1,7 +1,3 @@
-Here’s an improved and detailed version of your API documentation with some additional explanations and FAQs for clarity:
-
----
-
 # API Documentation
 
 This API supports **User Management** and **ChatGPT Interaction** functionalities.
