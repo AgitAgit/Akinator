@@ -11,7 +11,7 @@ Front-end: HTML - CSS - JavaScript
 
 Back-end: Node.js - MongoDB Atlas
 
-Deployment: Render
+Deployment: Github pages - Render
 
 ## Contributors
 - [Yossef Sabag](https://github.com/YosefHayim) Server side
