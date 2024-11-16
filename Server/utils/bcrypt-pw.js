@@ -5,10 +5,15 @@ const hashUserPassword = async (userPassword) => {
   return encryptedPassword;
 };
 
-const validateUserPassword = async (userPasswordEntered, storedHashedPassword) => {
-  const isPasswordValid = await bcrypt.compare(userPasswordEntered, storedHashedPassword);
+const validateUserPassword = async (
+  userPasswordEntered,
+  storedHashedPassword
+) => {
+  const isPasswordValid = await bcrypt.compare(
+    userPasswordEntered,
+    storedHashedPassword
+  );
   return isPasswordValid;
 };
-
 
 module.exports = { hashUserPassword, validateUserPassword };
