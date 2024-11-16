@@ -10,7 +10,8 @@ const maybeButton = document.querySelector("#maybe");
 
 const choiceButtons = [yesButton, noButton, maybeButton];
 
-menuButton.addEventListener('click', goToMenu);
+//Need to add menu navigation and login/signup implementation...
+//menuButton.addEventListener('click', goToMenu);
 choiceButtons.forEach(button => {
     button.addEventListener('click', (event) => handleChoiceButtonClick(event));
 })
@@ -29,6 +30,7 @@ let startMessage = "Welcome to the akinator game!\n";
 async function startGame(user = defaultUser){
     try{
         console.log("Trying to login user...");
+        updateScreen("connecting to the server, please wait...");
         const data = await loginUser(user.email, user.password);
         token = data.token;
         await restartSession(token);

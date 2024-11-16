@@ -1,6 +1,8 @@
 //Matan suggests I add a typing sound for each "keystroke"
 //of the updateScreen effect.
 
+//Matan suggest longer spans between text flicker.
+
 //Maybe break it into separate functions. On to write 
 //sentences that will be pretty quick(50 milliseconds delay 
 //for each character?) and a slower one for a small
@@ -9,6 +11,8 @@
 //Will replacing the p element with text area allow me to enter line breaks?
 //Maybe I should just attach spans and <br> elements for each sentence
 //In the update screen function.
+
+//Need to add a "loading content..." message.
 
 const screen = document.querySelector(".deviceScreen");
 
@@ -26,7 +30,7 @@ document.querySelectorAll('button').forEach(button => button.addEventListener('c
 //could add a click sound to all buttons with query selector all
 
 export const initScreen = function(message){
-    const intervalId = setInterval(screenFlicker, 1500);
+    const intervalId = setInterval(screenFlicker, 3000);
     updateScreen(message);
 }
 
