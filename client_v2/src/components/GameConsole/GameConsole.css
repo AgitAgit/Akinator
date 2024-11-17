@@ -1,0 +1,7 @@
+.game-console {
+    box-sizing: content-box;
+    width:320px;
+    padding:1rem;
+
+    background-color: lightgray;
+}
