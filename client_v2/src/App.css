@@ -1,12 +1,22 @@
 * {
   box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 :root {
   --screen-border:5px solid gray;
+  --game-console-border:15px solid gray;
+}
+
+body {
+  /* background-color: #282c34; */
 }
 
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 

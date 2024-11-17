@@ -1,7 +1,26 @@
+
+.wrap-original-transform {
+    perspective: 2000px;
+    transform-style: preserve-3d;
+}
+
+.original-transform {
+    transform: rotateX(6deg) rotateY(-6deg);
+}
+
 .game-console {
     box-sizing: content-box;
-    width:320px;
+    width:260px;
     padding:1rem;
-
+    /* border-right: var(--game-console-border); */
+    /* border-bottom: var(--game-console-border); */
     background-color: lightgray;
+}
+
+.game-console-right {
+    background-color: red;
+}
+
+.game-console-bottom {
+    background-color: blue;
 }

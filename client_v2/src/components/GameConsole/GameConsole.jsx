@@ -9,9 +9,15 @@ import InputArea from '../InputArea/InputArea.jsx';
 function GameConsole(){
 
     return(
-        <div className="game-console">
-            <Screen/>
-            <InputArea/>
+        <div className="wrap-original-transform">
+            <div className="original-transform">
+                <div className="game-console game-console-front">
+                    <Screen/>
+                    <InputArea/>
+                </div>
+                <div className='game-console-bottom'>what face is this</div>
+                <div className='game-console-right rightSide'>what face is this</div>
+            </div>
         </div>
     )
 }
