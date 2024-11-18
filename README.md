@@ -5,6 +5,10 @@
 ## Gallery
 <img src="./Assets/Gallery/Game_and_client_code.png">
 
+## Optional future improvements:
+-replace the chatgpt paid api with the free google gemini api
+-migrate the frontend to react
+
 ## Stack:
 
 Front-end: HTML - CSS - JavaScript
