@@ -10,9 +10,7 @@ const maybeButton = document.querySelector("#maybe");
 
 const choiceButtons = [yesButton, noButton, maybeButton];
 
-//Added comment so the commit message will appear over here too...
-//Need to add menu navigation and login/signup implementation...
-//menuButton.addEventListener('click', goToMenu);
+
 choiceButtons.forEach(button => {
     button.addEventListener('click', (event) => handleChoiceButtonClick(event));
 })

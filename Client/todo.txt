@@ -1,0 +1,22 @@
+//DONE
+//Matan suggests I add a typing sound for each "keystroke"
+//of the updateScreen effect.
+
+//Maybe break it into separate functions. On to write 
+//sentences that will be pretty quick(50 milliseconds delay 
+//for each character?) and a slower one for a small
+//delay at the end of each word.
+
+//Will replacing the p element with text area allow me to enter line breaks?
+//Maybe I should just attach spans and <br> elements for each sentence
+//In the update screen function.
+
+//Need to add a "loading content..." message.
+
+//Need to add menu navigation and login/signup implementation...
+//menuButton.addEventListener('click', goToMenu);
+
+//Fitoussi asks:
+//1. Recreate the graduall text effect with pure css
+//2. Add an error message on the console when failing to reach the server. 
+//   The error message should recommend restarting the app via the "power off" button.

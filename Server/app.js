@@ -1,4 +1,3 @@
-//Added comment so the commit message will appear over here too...
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
