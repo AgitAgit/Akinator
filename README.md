@@ -8,6 +8,7 @@
 ## Optional future improvements:
 -replace the chatgpt paid api with the free google gemini api
 -migrate the frontend to react
+--add more games to the console
 
 ## Stack:
 
